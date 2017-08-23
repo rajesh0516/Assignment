@@ -1,31 +1,14 @@
-function checkPalindrom() {
-    var inputValue =  document.getElementById("str").value;
-
-    for( var i= 0; i< inputValue.length/2;i++)
-    {
-        if( inputValue[i]!== inputValue[inputValue.length-1-i])
-        {
-           ( document.write(" is not Palindrom"));
-        }else{
-            document.write(" is  A Palindrom");
-        }
+function ChechPalindrom() {
+    var revStr= "";
+    var ans ="";
+    var str = document.getElementById("str").value;
+    for(var j = str.length ; j>=0 ; j--){
+        revStr = revStr+str.charAt(j);
     }
-}
-checkPalindrom("books");
-
-/*
-
-function palindrome(str) {
-    var re = /[^A-Za-z0-9]/g;
-    str = str.toLowerCase().replace(re, '');
-    var len = str.length;
-    for (var i = 0; i < len/2; i++) {
-        if (str[i] !== str[len - 1 - i]) {
-            return false;
-        }
+    if (str == revStr){
+        ans =  str+" is palindrome";
+    }else{
+        ans =  str+" is not a palindrome";
     }
-    return true;
+    document.getElementById("ansStr").value = ans;
 }
-palindrome("A man, a plan, a canal. Panama");
-
-*/
